@@ -26,12 +26,11 @@ public class Port2Step2 : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collider) {
-        posisiX = setPosisiX - (0.63f * connectedCables);
+        posisiX = setPosisiX;
         posisiY = setPosisiY;
-        posisiZ = setPosisiZ - (2.23f * connectedCables);
+        posisiZ = setPosisiZ;
         isConnected = true;
         connectedCableName = collider.gameObject.name;
-        connectedCables++;
     }
 
     private void OnTriggerExit(Collider other) {

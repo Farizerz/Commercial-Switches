@@ -74,12 +74,12 @@ public class Circuit1 : MonoBehaviour
             Step3Done.SetActive(true);
         }
         
-        /*fungsi guard clause, sama saja dengan if else dibawah, silahkan pilih yang mana yg mudah dibaca
+        //fungsi guard clause, sama saja dengan if else dibawah, silahkan pilih yang mana yg mudah dibaca
         step1();
         step2();
         step3();
-        */
-
+        
+/*
         //if else, silahkan comment jika ingin ganti ke guard clause.
         //if power supply on and finished step 1
         if(Circuit1Step1.Step1Done && isPowerSupplyOn) {
@@ -112,10 +112,10 @@ public class Circuit1 : MonoBehaviour
             PortBiru3Text.text = "";
             LampON.SetActive(false);
         }
-
+*/
     }
 
-/* start fungsi guard clause
+    //start fungsi guard clause
     public void step1() {
         if(!isPowerSupplyOn) {
             PortMerah21Text.text = "";
@@ -170,7 +170,7 @@ public class Circuit1 : MonoBehaviour
         LampON.SetActive(true);
         return;
     }
-*/
+
     public void SwitchPowerSupplyOn() {
         isPowerSupplyOn = true;
         PowerSupplySwitch.transform.Rotate(0, 50, 0);
