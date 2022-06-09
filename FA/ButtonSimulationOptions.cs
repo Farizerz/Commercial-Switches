@@ -90,8 +90,14 @@ public class ButtonSimulationOptions : MonoBehaviour
     }    
     public void enam(){
         CircuitNumber = 5;
+        isShow = false;
+        btnShow.SetActive(true);
+        btnHide.SetActive(false);        
     }
     public void tujuh(){
+        isShow = false;
+        btnShow.SetActive(true);
+        btnHide.SetActive(false);        
         CircuitNumber = 6;
     }        
 }
