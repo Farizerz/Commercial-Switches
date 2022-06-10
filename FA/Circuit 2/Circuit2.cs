@@ -314,6 +314,7 @@ public class Circuit2 : MonoBehaviour
         PortMerahDPSTKiriAtasText.text = "";
         PortMerahDPSTKananAtasText.text = "";        
     }
+    
     //this function will be activated in Draggable.cs
     public static void enableDragging() {
         Port1Step1C2.isDragging = true;
