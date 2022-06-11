@@ -206,31 +206,127 @@ public class Circuit6 : MonoBehaviour
         }
         PortMerahPSText.text = "12";
         PortMerahDPDTKiriDText.text = "12";
+        if(posisiSwitch=="atas") {
+            PortMerahDPDTKananBText.text = "12";
+            return;
+        }
+        if(posisiSwitch=="bawah") {
+            PortMerahDPDTKananFText.text = "12";
+            return;
+        }
         return;
     }
     public void step2() {
-
+        if(!isPowerSupplyOn) {
+            return;
+        }
+        if(!Circuit6Step1.Step1C6Done) {
+            return;
+        }
+        if(!Circuit6Step2.Step2C6Done) {
+            return;
+        }
+        PortMerahDPDTKiriCText.text = "12";
+        if(posisiSwitch=="atas") {
+            PortMerahDPDTKananAText.text = "12";
+            return;
+        }
+        if(posisiSwitch=="bawah") {
+            PortMerahDPDTKananEText.text = "12";
+            return;
+        }                        
         return;
     }
 
     public void step3() {
+        if(!isPowerSupplyOn) {
+            return;
+        }
+        if(!Circuit6Step1.Step1C6Done) {
+            return;
+        }
+        if(!Circuit6Step2.Step2C6Done) {
+            return;
+        }
+        if(!Circuit6Step3.Step3C6Done) {
+            return;
+        }
+        if(posisiSwitch=="atas") {
+            PortMerahLamp1Text.text = "12";
+            return;
+        }
+        PortMerahLamp1Text.text = "";                        
         return;         
     }
 
     public void step4() {
+        if(!isPowerSupplyOn) {
+            return;
+        }
+        if(!Circuit6Step1.Step1C6Done) {
+            return;
+        }
+        if(!Circuit6Step2.Step2C6Done) {
+            return;
+        }
+        if(!Circuit6Step4.Step4C6Done) {
+            return;
+        }
+        if(posisiSwitch=="bawah") {
+            PortMerahLamp2Text.text = "12";
+            return;
+        }
+        PortMerahLamp2Text.text = "";                           
         return;
     }
 
     public void step5() {
+        if(!isPowerSupplyOn) {
+            return;
+        }
+        if(!Circuit6Step1.Step1C6Done) {
+            return;
+        }
+        if(posisiSwitch!="atas") {
+            PortMerahDPDTKananBText.text = "";
+            PortMerahPLMerahText.text = "";
+            return;
+        }
+        PortMerahDPDTKananBText.text = "12";        
+        if(!Circuit6Step5.Step5C6Done) {
+            return;
+        }
+        PortMerahPLMerahText.text = "12";                        
         return;
     }
 
     public void step6() {
-    
+        if(!isPowerSupplyOn) {
+            return;
+        }
+        if(!Circuit6Step1.Step1C6Done) {
+            return;
+        }
+        if(posisiSwitch!="bawah") {
+            PortMerahDPDTKananFText.text = "";
+            PortMerahPLKuningText.text = "";
+            return;
+        }
+        PortMerahDPDTKananFText.text = "12";        
+        if(!Circuit6Step6.Step6C6Done) {
+            return;
+        }
+        PortMerahPLKuningText.text = "12";                        
         return;
     }
     public void step7() {
-
+        if(!isPowerSupplyOn) {
+            return;
+        }
+        if(!Circuit6Step7.Step7C6Done) {
+            return;
+        }
+                
         return;
     }
 
