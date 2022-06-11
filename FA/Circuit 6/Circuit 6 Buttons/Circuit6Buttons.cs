@@ -41,7 +41,6 @@ public class Circuit6Buttons : MonoBehaviour
     }
 
     public void step1() {
-        /*
         Step1Object.SetActive(true);
         if(!Circuit6Step2.Step2C6Done) {
             Step2Object.SetActive(false);
@@ -58,6 +57,18 @@ public class Circuit6Buttons : MonoBehaviour
         if(!Circuit6Step6.Step6C6Done) {
             Step6Object.SetActive(false);
         }
+        if(!Circuit6Step7.Step7C6Done) {
+            Step7Object.SetActive(false);
+        }
+        if(!Circuit6Step8.Step8C6Done) {
+            Step8Object.SetActive(false);
+        }
+        if(!Circuit6Step9.Step9C6Done) {
+            Step9Object.SetActive(false);
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            Step10Object.SetActive(false);
+        }                        
 
         Step1Text.SetActive(true);
         Step2Text.SetActive(false);
@@ -65,11 +76,14 @@ public class Circuit6Buttons : MonoBehaviour
         Step4Text.SetActive(false);
         Step5Text.SetActive(false);
         Step6Text.SetActive(false);
-        */
+        Step7Text.SetActive(false);
+        Step8Text.SetActive(false);
+        Step9Text.SetActive(false);
+        Step10Text.SetActive(false);        
+
     }
 
     public void step2() {
-        /*
         Step2Object.SetActive(true);
         if(!Circuit6Step1.Step1C6Done) {
             Step1Object.SetActive(false);
@@ -86,17 +100,32 @@ public class Circuit6Buttons : MonoBehaviour
         if(!Circuit6Step6.Step6C6Done) {
             Step6Object.SetActive(false);
         }
+        if(!Circuit6Step7.Step7C6Done) {
+            Step7Object.SetActive(false);
+        }
+        if(!Circuit6Step8.Step8C6Done) {
+            Step8Object.SetActive(false);
+        }
+        if(!Circuit6Step9.Step9C6Done) {
+            Step9Object.SetActive(false);
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            Step10Object.SetActive(false);
+        }
+
         Step2Text.SetActive(true);
         Step1Text.SetActive(false);
         Step3Text.SetActive(false);
         Step4Text.SetActive(false);
         Step5Text.SetActive(false);
         Step6Text.SetActive(false);
-        */        
+        Step7Text.SetActive(false);
+        Step8Text.SetActive(false);
+        Step9Text.SetActive(false);
+        Step10Text.SetActive(false);       
     }
 
     public void step3() {
-        /*
         Step3Object.SetActive(true);
         if(!Circuit6Step1.Step1C6Done) {
             Step1Object.SetActive(false);
@@ -113,6 +142,18 @@ public class Circuit6Buttons : MonoBehaviour
         if(!Circuit6Step6.Step6C6Done) {
             Step6Object.SetActive(false);
         }
+        if(!Circuit6Step7.Step7C6Done) {
+            Step7Object.SetActive(false);
+        }
+        if(!Circuit6Step8.Step8C6Done) {
+            Step8Object.SetActive(false);
+        }
+        if(!Circuit6Step9.Step9C6Done) {
+            Step9Object.SetActive(false);
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            Step10Object.SetActive(false);
+        }
 
         Step3Text.SetActive(true);
         Step2Text.SetActive(false);
@@ -120,11 +161,13 @@ public class Circuit6Buttons : MonoBehaviour
         Step4Text.SetActive(false);
         Step5Text.SetActive(false);
         Step6Text.SetActive(false);
-        */        
+        Step7Text.SetActive(false);
+        Step8Text.SetActive(false);
+        Step9Text.SetActive(false);
+        Step10Text.SetActive(false);     
     }
 
     public void step4() {
-        /*
         Step4Object.SetActive(true);
         if(!Circuit6Step1.Step1C6Done) {
             Step1Object.SetActive(false);
@@ -141,6 +184,18 @@ public class Circuit6Buttons : MonoBehaviour
         if(!Circuit6Step6.Step6C6Done) {
             Step6Object.SetActive(false);
         }
+        if(!Circuit6Step7.Step7C6Done) {
+            Step7Object.SetActive(false);
+        }
+        if(!Circuit6Step8.Step8C6Done) {
+            Step8Object.SetActive(false);
+        }
+        if(!Circuit6Step9.Step9C6Done) {
+            Step9Object.SetActive(false);
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            Step10Object.SetActive(false);
+        }
 
         Step4Text.SetActive(true);
         Step2Text.SetActive(false);
@@ -148,11 +203,13 @@ public class Circuit6Buttons : MonoBehaviour
         Step3Text.SetActive(false);
         Step5Text.SetActive(false);
         Step6Text.SetActive(false);
-        */          
+        Step7Text.SetActive(false);
+        Step8Text.SetActive(false);
+        Step9Text.SetActive(false);
+        Step10Text.SetActive(false);         
     }
 
     public void step5() {
-        /*
         Step5Object.SetActive(true);
         if(!Circuit6Step1.Step1C6Done) {
             Step1Object.SetActive(false);
@@ -169,6 +226,18 @@ public class Circuit6Buttons : MonoBehaviour
         if(!Circuit6Step6.Step6C6Done) {
             Step6Object.SetActive(false);
         }
+        if(!Circuit6Step7.Step7C6Done) {
+            Step7Object.SetActive(false);
+        }
+        if(!Circuit6Step8.Step8C6Done) {
+            Step8Object.SetActive(false);
+        }
+        if(!Circuit6Step9.Step9C6Done) {
+            Step9Object.SetActive(false);
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            Step10Object.SetActive(false);
+        }
 
         Step5Text.SetActive(true);
         Step2Text.SetActive(false);
@@ -176,11 +245,13 @@ public class Circuit6Buttons : MonoBehaviour
         Step4Text.SetActive(false);
         Step3Text.SetActive(false);
         Step6Text.SetActive(false);
-        */  
+        Step7Text.SetActive(false);
+        Step8Text.SetActive(false);
+        Step9Text.SetActive(false);
+        Step10Text.SetActive(false);  
     }
     
     public void step6() {
-        /*
         Step6Object.SetActive(true);
         if(!Circuit6Step1.Step1C6Done) {
             Step1Object.SetActive(false);
@@ -197,6 +268,18 @@ public class Circuit6Buttons : MonoBehaviour
         if(!Circuit6Step3.Step3C6Done) {
             Step3Object.SetActive(false);
         }
+        if(!Circuit6Step7.Step7C6Done) {
+            Step7Object.SetActive(false);
+        }
+        if(!Circuit6Step8.Step8C6Done) {
+            Step8Object.SetActive(false);
+        }
+        if(!Circuit6Step9.Step9C6Done) {
+            Step9Object.SetActive(false);
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            Step10Object.SetActive(false);
+        }
 
         Step6Text.SetActive(true);
         Step2Text.SetActive(false);
@@ -204,11 +287,13 @@ public class Circuit6Buttons : MonoBehaviour
         Step4Text.SetActive(false);
         Step5Text.SetActive(false);
         Step3Text.SetActive(false);
-        */          
+        Step7Text.SetActive(false);
+        Step8Text.SetActive(false);
+        Step9Text.SetActive(false);
+        Step10Text.SetActive(false);         
     }
 
     public void step7() {
-        /*
         Step7Object.SetActive(true);
         if(!Circuit6Step1.Step1C6Done) {
             Step1Object.SetActive(false);
@@ -228,6 +313,16 @@ public class Circuit6Buttons : MonoBehaviour
         if(!Circuit6Step6.Step6C6Done) {
             Step6Object.SetActive(false);
         }
+        if(!Circuit6Step8.Step8C6Done) {
+            Step8Object.SetActive(false);
+        }
+        if(!Circuit6Step9.Step9C6Done) {
+            Step9Object.SetActive(false);
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            Step10Object.SetActive(false);
+        }
+        
 
         Step7Text.SetActive(true);
         Step6Text.SetActive(false);
@@ -236,11 +331,12 @@ public class Circuit6Buttons : MonoBehaviour
         Step4Text.SetActive(false);
         Step5Text.SetActive(false);
         Step3Text.SetActive(false);
-        */          
+        Step8Text.SetActive(false);
+        Step9Text.SetActive(false);
+        Step10Text.SetActive(false);          
     }
 
     public void step8() {
-        /*
         Step8Object.SetActive(true);
         if(!Circuit6Step1.Step1C6Done) {
             Step1Object.SetActive(false);
@@ -263,6 +359,12 @@ public class Circuit6Buttons : MonoBehaviour
         if(!Circuit6Step7.Step7C6Done) {
             Step7Object.SetActive(false);
         }
+        if(!Circuit6Step9.Step9C6Done) {
+            Step9Object.SetActive(false);
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            Step10Object.SetActive(false);
+        }        
 
         Step8Text.SetActive(true);
         Step7Text.SetActive(false);
@@ -272,11 +374,11 @@ public class Circuit6Buttons : MonoBehaviour
         Step4Text.SetActive(false);
         Step5Text.SetActive(false);
         Step3Text.SetActive(false);
-        */          
+        Step9Text.SetActive(false);
+        Step10Text.SetActive(false);         
     } 
 
     public void step9() {
-        /*
         Step9Object.SetActive(true);
         if(!Circuit6Step1.Step1C6Done) {
             Step1Object.SetActive(false);
@@ -302,6 +404,9 @@ public class Circuit6Buttons : MonoBehaviour
         if(!Circuit6Step8.Step8C6Done) {
             Step8Object.SetActive(false);
         }
+        if(!Circuit6Step10.Step10C6Done) {
+            Step10Object.SetActive(false);
+        }  
 
         Step9Text.SetActive(true);
         Step8Text.SetActive(false);
@@ -312,11 +417,11 @@ public class Circuit6Buttons : MonoBehaviour
         Step4Text.SetActive(false);
         Step5Text.SetActive(false);
         Step3Text.SetActive(false);
-        */          
+        Step6Text.SetActive(false);
+        Step10Text.SetActive(false);          
     }
 
     public void step10() {
-        /*
         Step10Object.SetActive(true);
         if(!Circuit6Step1.Step1C6Done) {
             Step1Object.SetActive(false);
@@ -355,7 +460,6 @@ public class Circuit6Buttons : MonoBehaviour
         Step1Text.SetActive(false);
         Step4Text.SetActive(false);
         Step5Text.SetActive(false);
-        Step3Text.SetActive(false); 
-        */         
+        Step3Text.SetActive(false);        
     }                                 
 }
