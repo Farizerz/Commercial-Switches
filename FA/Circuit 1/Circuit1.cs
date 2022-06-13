@@ -15,6 +15,9 @@ public class Circuit1 : MonoBehaviour
     public GameObject Step2Done;
     public GameObject Step3Done;
 
+    public GameObject[] CircuitImage;
+    public TextMeshProUGUI CircuitInstructions;
+
     [Header("Power Supply")]
     public GameObject PowerSupplySwitch;
     public GameObject PSIndicator;
@@ -41,6 +44,9 @@ public class Circuit1 : MonoBehaviour
     TextMeshPro PortMerah3Text;
     TextMeshPro PortBiru3Text;
 
+    [Header("Modifier")]
+    public bool init;
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,21 +64,28 @@ public class Circuit1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //disable buttons on circuit diagram and shows the status
-        if(Circuit1Step1.Step1Done) {
-            Button1.SetActive(false);
-            Step1Done.SetActive(true);
-        }
+            if(Circuit1Step1.Step1Done) {
+                Button1.SetActive(false);
+                Step1Done.SetActive(true);
+            }
 
-        if(Circuit1Step2.Step2Done) {
-            Button2.SetActive(false);
-            Step2Done.SetActive(true);
-        }
+            if(Circuit1Step2.Step2Done) {
+                Button2.SetActive(false);
+                Step2Done.SetActive(true);
+            }
 
-        if(Circuit1Step3.Step3Done) {
-            Button3.SetActive(false);
-            Step3Done.SetActive(true);
-        }
+            if(Circuit1Step3.Step3Done) {
+                Button3.SetActive(false);
+                Step3Done.SetActive(true);
+            }
+
+            if(Circuit1Step1.Step1Done &&
+            Circuit1Step2.Step2Done &&
+            Circuit1Step3.Step3Done        
+            ) {
+                CircuitInstructions.text = "Circuit Completed!";
+            }
+
         
         //fungsi guard clause, sama saja dengan if else dibawah, silahkan pilih yang mana yg mudah dibaca
         step1();
@@ -189,6 +202,8 @@ public class Circuit1 : MonoBehaviour
         isSPDTOn = true;
         SPDTSwitch.transform.Rotate(0, -50, 0);
         SPDTIndicator.transform.Rotate(0, 0, 20);
+        CircuitImage[0].SetActive(false);
+        CircuitImage[1].SetActive(true);
     }
 
     public void SwitchSPSTOff() {
@@ -197,6 +212,8 @@ public class Circuit1 : MonoBehaviour
         SPDTIndicator.transform.Rotate(0, 0, -20);
         PortMerah21Text.text = "";
         PortMerah22Text.text = "";
+        CircuitImage[0].SetActive(true);
+        CircuitImage[1].SetActive(false);        
     }
 
     //this function will be activated in Draggable.cs

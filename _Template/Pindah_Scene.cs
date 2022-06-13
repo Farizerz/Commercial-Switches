@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Pindah_Scene : MonoBehaviour
 {
+    
     public void pindah_scene(string Nama_Scene)
     {
         SceneManager.LoadScene(Nama_Scene);
@@ -16,5 +17,9 @@ public class Pindah_Scene : MonoBehaviour
     public void _Exit()
     {
         Application.Quit();
+    }
+
+    public void pindah_scene2() {
+        Application.LoadLevel(Application.loadedLevel);
     }
 }

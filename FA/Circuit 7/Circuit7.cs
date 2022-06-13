@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Circuit7 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class Circuit7 : MonoBehaviour
 {
     
     [Header("UI")]
@@ -22,7 +22,10 @@ public class Circuit7 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject Step3Done;
     public GameObject Step4Done;
     public GameObject Step5Done;
-    public GameObject Step6Done;    
+    public GameObject Step6Done;
+
+    public GameObject[] CircuitImage;
+    public TextMeshProUGUI CircuitInstructions;          
 
     [Header("Power Supply")]
     public GameObject PowerSupplySwitch;
@@ -128,6 +131,16 @@ public class Circuit7 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             Button6.SetActive(false);
             Step6Done.SetActive(true);
         }
+
+        if(Circuit7Step1.Step1C7Done &&
+           Circuit7Step2.Step2C7Done &&
+           Circuit7Step3.Step3C7Done &&
+           Circuit7Step4.Step4C7Done &&
+           Circuit7Step5.Step5C7Done &&
+           Circuit7Step6.Step6C7Done       
+        ) {
+            CircuitInstructions.text = "Circuit Completed!";
+        }
         
         //if all switched on and finished step 1
         step1();
@@ -151,11 +164,14 @@ public class Circuit7 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         if(isGreen) {
             PBHijau.transform.localPosition = new Vector3(0, 0, -0.35f);
             PushButtonBoard[0].SetActive(false);
-            PushButtonBoard[2].SetActive(true);            
+            PushButtonBoard[2].SetActive(true);
+            CircuitImage[2].SetActive(true);
+            CircuitImage[0].SetActive(false);
         } else {
             PBHijau.transform.localPosition = new Vector3(0, 0, 0f);
             PushButtonBoard[0].SetActive(true);
-            PushButtonBoard[2].SetActive(false);              
+            PushButtonBoard[2].SetActive(false);
+            CircuitImage[2].SetActive(false);              
         }                
     }
 
@@ -319,10 +335,9 @@ public class Circuit7 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         PBMerah.transform.localPosition = new Vector3(0, 0, -0.35f);
         PushButtonBoard[0].SetActive(false);
         PushButtonBoard[1].SetActive(true);
-    }
-
-    public void OnPointerDown(PointerEventData eventData) {
-
+        CircuitImage[1].SetActive(true);
+        CircuitImage[0].SetActive(false);
+        CircuitImage[2].SetActive(false); 
     }
 
     public void SwitchPBOff() {
@@ -337,11 +352,10 @@ public class Circuit7 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         PortMerahPBKananAtasText.text = "";
         PushButtonBoard[0].SetActive(true);
         PushButtonBoard[1].SetActive(false);
-        PushButtonBoard[2].SetActive(false);              
-    }
-
-    public void OnPointerUp(PointerEventData eventData) {
-        
+        PushButtonBoard[2].SetActive(false);
+        CircuitImage[0].SetActive(true);
+        CircuitImage[1].SetActive(false);
+        CircuitImage[2].SetActive(false);                       
     }
 
     //this function will be activated in Draggable.cs

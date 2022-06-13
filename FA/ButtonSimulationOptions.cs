@@ -54,6 +54,7 @@ public class ButtonSimulationOptions : MonoBehaviour
                 animationTitle.text = "Circuit "+(i+1);
                 Circuit[i].SetActive(true);
                 CircuitUI[i].SetActive(true);
+                CircuitUI[7].SetActive(false);
             } else {
                 Circuit[i].SetActive(false);
                 CircuitUI[i].SetActive(false);                

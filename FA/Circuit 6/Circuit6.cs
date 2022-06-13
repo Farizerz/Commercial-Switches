@@ -27,8 +27,10 @@ public class Circuit6 : MonoBehaviour
     public GameObject Step7Done;
     public GameObject Step8Done;
     public GameObject Step9Done;
-    public GameObject Step10Done;   
+    public GameObject Step10Done;
 
+    public GameObject[] CircuitImage;
+    public TextMeshProUGUI CircuitInstructions;         
 
     [Header("Power Supply")]
     public GameObject PowerSupplySwitch;
@@ -169,6 +171,20 @@ public class Circuit6 : MonoBehaviour
             Button10.SetActive(false);
             Step10Done.SetActive(true);
         }
+
+        if(Circuit6Step1.Step1C6Done &&
+           Circuit6Step2.Step2C6Done &&
+           Circuit6Step3.Step3C6Done &&
+           Circuit6Step4.Step4C6Done &&
+           Circuit6Step5.Step5C6Done &&
+           Circuit6Step6.Step6C6Done &&
+           Circuit6Step7.Step7C6Done &&
+           Circuit6Step8.Step8C6Done &&
+           Circuit6Step9.Step9C6Done &&
+           Circuit6Step10.Step10C6Done       
+        ) {
+            CircuitInstructions.text = "Circuit Completed!";
+        }
         
         //if all switched on and finished step 1
         step1();
@@ -194,6 +210,14 @@ public class Circuit6 : MonoBehaviour
         step9();
 
         step10();
+
+        //hidupkan lampu
+        TurnOnLamp1();
+        TurnOnLamp2();
+
+        //hidupkan pilot lights
+        TurnOnRedLight();
+        TurnOnYellowLight();
            
     }
 
@@ -326,21 +350,184 @@ public class Circuit6 : MonoBehaviour
         if(!Circuit6Step7.Step7C6Done) {
             return;
         }
-                
+        if(!Circuit6Step8.Step8C6Done) {
+            return;
+        }        
+        if(!Circuit6Step9.Step9C6Done) {
+            return;
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            return;
+        }
+        PortHitamLamp1Text.text = "0";                        
         return;
     }
 
     public void step8() {
+        if(!isPowerSupplyOn) {
+            return;
+        }
+        if(!Circuit6Step8.Step8C6Done) {
+            return;    
+        }
+        if(!Circuit6Step9.Step9C6Done) {
+            return;
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            return;
+        }
+        PortHitamLamp2Text.text = "0";                
        return;                       
     }
 
     public void step9() {
+        if(!isPowerSupplyOn) {
+            return;
+        }
+        if(!Circuit6Step9.Step9C6Done) {
+            return;
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            return;
+        }
+        PortHitamPLKuningText.text = "0";               
         return;
     }
 
     public void step10() {
+        if(!isPowerSupplyOn) {
+            return;
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            return;
+        }
+        PortHitamPLMerahText.text = "0";                      
         return;
     }
+
+    public void TurnOnLamp1() {
+        if(!isPowerSupplyOn) {
+            Lamp1OFF.SetActive(true);
+            Lamp1ON.SetActive(false);
+            return;
+        }
+        if(!Circuit6Step1.Step1C6Done) {
+            return;
+        }
+        if(!Circuit6Step2.Step2C6Done) {
+            return;
+        }
+        if(!Circuit6Step3.Step3C6Done) {
+            return;
+        }
+        if(!Circuit6Step7.Step7C6Done) {
+            return;
+        }
+        if(!Circuit6Step8.Step8C6Done) {
+            return;
+        }        
+        if(!Circuit6Step9.Step9C6Done) {
+            return;
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            return;
+        }
+        if(posisiSwitch=="atas") {
+            Lamp1OFF.SetActive(false);
+            Lamp1ON.SetActive(true);
+            return; 
+        }
+        Lamp1OFF.SetActive(true);
+        Lamp1ON.SetActive(false);        
+        return;                
+    }
+
+    public void TurnOnRedLight() {
+        if(!isPowerSupplyOn) {
+            PilotLight0FFMerah.SetActive(true);
+            PilotLight0NMerah.SetActive(false);
+            return;
+        }
+        if(!Circuit6Step1.Step1C6Done) {
+            return;
+        }
+        if(!Circuit6Step5.Step5C6Done) {
+            return;
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            return;
+        }
+        if(posisiSwitch=="atas") {
+            PilotLight0FFMerah.SetActive(false);
+            PilotLight0NMerah.SetActive(true);
+            return;  
+        }
+        PilotLight0FFMerah.SetActive(true);
+        PilotLight0NMerah.SetActive(false);              
+        return;
+    }
+
+    public void TurnOnLamp2() {
+        if(!isPowerSupplyOn) {
+            Lamp2OFF.SetActive(true);
+            Lamp2ON.SetActive(false);
+            return;
+        }
+        if(!Circuit6Step1.Step1C6Done) {
+            return;
+        }
+        if(!Circuit6Step2.Step2C6Done) {
+            return;
+        }
+        if(!Circuit6Step3.Step3C6Done) {
+            return;
+        }
+        if(!Circuit6Step8.Step8C6Done) {
+            return;
+        }        
+        if(!Circuit6Step9.Step9C6Done) {
+            return;
+        }
+        if(!Circuit6Step10.Step10C6Done) {
+            return;
+        }
+        if(posisiSwitch=="bawah") {
+            Lamp2OFF.SetActive(false);
+            Lamp2ON.SetActive(true);
+            return; 
+        }
+        Lamp2OFF.SetActive(true);
+        Lamp2ON.SetActive(false);              
+        return;               
+    }
+
+    public void TurnOnYellowLight() {
+        if(!isPowerSupplyOn) {
+            PilotLight0FFKuning.SetActive(true);
+            PilotLight0NKuning.SetActive(false);
+            return;
+        }
+        if(!Circuit6Step1.Step1C6Done) {
+            return;
+        }
+        if(!Circuit6Step6.Step6C6Done) {
+            return;
+        }
+        if(!Circuit6Step9.Step9C6Done) {
+            return;
+        }        
+        if(!Circuit6Step10.Step10C6Done) {
+            return;
+        }
+        if(posisiSwitch=="bawah") {
+            PilotLight0FFKuning.SetActive(false);
+            PilotLight0NKuning.SetActive(true);
+            return;
+        }
+        PilotLight0FFKuning.SetActive(true);
+        PilotLight0NKuning.SetActive(false);                
+        return;
+    }    
 
     public void SwitchPowerSupplyOn() {
         isPowerSupplyOn = true;
@@ -379,6 +566,9 @@ public class Circuit6 : MonoBehaviour
         DPDTSwitch.transform.Rotate(0, 50, 0);
         DPDTIndicatorAtas.transform.Rotate(0, -30, 0);
         DPDTIndicatorBawah.transform.Rotate(0, -30, 0);
+        CircuitImage[0].SetActive(false);
+        CircuitImage[1].SetActive(false); 
+        CircuitImage[2].SetActive(true);        
     }
 
     public void SwitchDPDTOnAtas() {
@@ -387,6 +577,9 @@ public class Circuit6 : MonoBehaviour
         DPDTSwitch.transform.Rotate(0, -50, 0);
         DPDTIndicatorAtas.transform.Rotate(0, 30, 0);
         DPDTIndicatorBawah.transform.Rotate(0, 30, 0);
+        CircuitImage[0].SetActive(false);
+        CircuitImage[1].SetActive(true); 
+        CircuitImage[2].SetActive(false);        
     }           
 
     public void SwitchDPDTOffBawah() {
@@ -402,7 +595,10 @@ public class Circuit6 : MonoBehaviour
         PortMerahDPDTKananBText.text = "";
         PortMerahDPDTKananFText.text = ""; 
         PortMerahPLMerahText.text = "";
-        PortMerahPLKuningText.text = "";                     
+        PortMerahPLKuningText.text = "";
+        CircuitImage[0].SetActive(true);
+        CircuitImage[2].SetActive(false); 
+        CircuitImage[1].SetActive(false);                     
     }
 
 
@@ -419,7 +615,10 @@ public class Circuit6 : MonoBehaviour
         PortMerahDPDTKananBText.text = "";
         PortMerahDPDTKananFText.text = "";
         PortMerahPLMerahText.text = "";
-        PortMerahPLKuningText.text = "";            
+        PortMerahPLKuningText.text = "";
+        CircuitImage[0].SetActive(true);
+        CircuitImage[2].SetActive(false); 
+        CircuitImage[1].SetActive(false);            
     }     
 
     //this function will be activated in Draggable.cs
@@ -433,7 +632,15 @@ public class Circuit6 : MonoBehaviour
         Port1Step4C6.isDragging = true;
         Port2Step4C6.isDragging = true;
         Port1Step5C6.isDragging = true;
-        Port2Step5C6.isDragging = true;               
+        Port2Step5C6.isDragging = true;        
+        Port1Step7C6.isDragging = true;
+        Port2Step7C6.isDragging = true;
+        Port1Step8C6.isDragging = true;
+        Port2Step8C6.isDragging = true;
+        Port1Step9C6.isDragging = true;
+        Port2Step9C6.isDragging = true;
+        Port1Step10C6.isDragging = true;
+        Port2Step10C6.isDragging = true;                       
     }
 
     //this function will be activated in Draggable.cs
@@ -447,6 +654,14 @@ public class Circuit6 : MonoBehaviour
         Port1Step4C6.isDragging = false;
         Port2Step4C6.isDragging = false;
         Port1Step5C6.isDragging = false;
-        Port2Step5C6.isDragging = false;           
+        Port2Step5C6.isDragging = false;
+        Port1Step7C6.isDragging = false;
+        Port2Step7C6.isDragging = false;
+        Port1Step8C6.isDragging = false;
+        Port2Step8C6.isDragging = false;
+        Port1Step9C6.isDragging = false;
+        Port2Step9C6.isDragging = false;
+        Port1Step10C6.isDragging = false;
+        Port2Step10C6.isDragging = false;                     
     }       
 }

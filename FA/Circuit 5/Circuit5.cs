@@ -17,7 +17,10 @@ public class Circuit5 : MonoBehaviour
     public GameObject Step2Done;
     public GameObject Step3Done;
     public GameObject Step4Done;
-    public GameObject Step5Done;   
+    public GameObject Step5Done;
+
+    public GameObject[] CircuitImage;
+    public TextMeshProUGUI CircuitInstructions;        
 
     [Header("Power Supply")]
     public GameObject PowerSupplySwitch;
@@ -101,6 +104,15 @@ public class Circuit5 : MonoBehaviour
             Button5.SetActive(false);
             Step5Done.SetActive(true);
         }
+        
+        if(Circuit5Step1.Step1C5Done &&
+           Circuit5Step2.Step2C5Done &&
+           Circuit5Step3.Step3C5Done &&
+           Circuit5Step4.Step4C5Done &&
+           Circuit5Step5.Step5C5Done       
+        ) {
+            CircuitInstructions.text = "Circuit Completed!";
+        }      
         
         //if all switched on and finished step 1
         step1();
@@ -269,6 +281,9 @@ public class Circuit5 : MonoBehaviour
         posisiSwitch = "bawah";
         SPDTSwitch.transform.Rotate(0, 50, 0);
         SPDTIndicator.transform.Rotate(0, -30, 0);
+        CircuitImage[0].SetActive(false);
+        CircuitImage[1].SetActive(false); 
+        CircuitImage[2].SetActive(true);
     }
 
     public void SwitchSPDTOnAtas() {
@@ -276,6 +291,9 @@ public class Circuit5 : MonoBehaviour
         posisiSwitch = "atas";
         SPDTSwitch.transform.Rotate(0, -50, 0);
         SPDTIndicator.transform.Rotate(0, 30, 0);
+        CircuitImage[0].SetActive(false);
+        CircuitImage[1].SetActive(true); 
+        CircuitImage[2].SetActive(false); 
     }           
 
     public void SwitchSPDTOffBawah() {
@@ -285,7 +303,10 @@ public class Circuit5 : MonoBehaviour
         SPDTIndicator.transform.Rotate(0, 30, 0);
         PortMerahSPDTKiriText.text = "";
         PortMerahSPDTKananBawahText.text = "";
-        PortMerahSPDTKananAtasText.text = "";        
+        PortMerahSPDTKananAtasText.text = "";
+        CircuitImage[0].SetActive(true);
+        CircuitImage[2].SetActive(false); 
+        CircuitImage[1].SetActive(false);
     }
 
     public void SwitchSPDTOffAtas() {
@@ -295,7 +316,10 @@ public class Circuit5 : MonoBehaviour
         SPDTIndicator.transform.Rotate(0, -30, 0);
         PortMerahSPDTKiriText.text = "";
         PortMerahSPDTKananBawahText.text = "";
-        PortMerahSPDTKananAtasText.text = "";        
+        PortMerahSPDTKananAtasText.text = "";
+        CircuitImage[0].SetActive(true);
+        CircuitImage[2].SetActive(false); 
+        CircuitImage[1].SetActive(false);                
     }    
     //this function will be activated in Draggable.cs
     public static void enableDragging() {

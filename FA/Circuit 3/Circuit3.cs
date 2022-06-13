@@ -17,7 +17,10 @@ public class Circuit3 : MonoBehaviour
     public GameObject Step2Done;
     public GameObject Step3Done;
     public GameObject Step4Done;
-    public GameObject Step5Done;   
+    public GameObject Step5Done;
+
+    public GameObject[] CircuitImage;
+    public TextMeshProUGUI CircuitInstructions;               
 
     [Header("Power Supply")]
     public GameObject PowerSupplySwitch;
@@ -100,6 +103,15 @@ public class Circuit3 : MonoBehaviour
             Button5.SetActive(false);
             Step5Done.SetActive(true);
         }
+
+        if(Circuit3Step1.Step1C3Done &&
+           Circuit3Step2.Step2C3Done &&
+           Circuit3Step3.Step3C3Done &&
+           Circuit3Step4.Step4C3Done &&
+           Circuit3Step5.Step5C3Done       
+        ) {
+            CircuitInstructions.text = "Circuit Completed!";
+        }           
         
         //if all switched on and finished step 1
         step1();
@@ -253,6 +265,8 @@ public class Circuit3 : MonoBehaviour
         isSPDTOn = true;
         SPDTSwitch.transform.Rotate(0, -50, 0);
         SPDTIndicator.transform.Rotate(0, 0, -60);
+        CircuitImage[0].SetActive(false);
+        CircuitImage[1].SetActive(true); 
     }
 
     public void SwitchSPDTOff() {
@@ -261,7 +275,9 @@ public class Circuit3 : MonoBehaviour
         SPDTIndicator.transform.Rotate(0, 0, 60);
         PortMerahSPDTKiriText.text = "";
         PortMerahSPDTKananBawahText.text = "";
-        PortMerahSPDTKananAtasText.text = "";        
+        PortMerahSPDTKananAtasText.text = "";
+        CircuitImage[0].SetActive(true);
+        CircuitImage[1].SetActive(false);
     }
     //this function will be activated in Draggable.cs
     public static void enableDragging() {

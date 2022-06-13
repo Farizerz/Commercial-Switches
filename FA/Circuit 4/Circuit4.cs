@@ -19,7 +19,10 @@ public class Circuit4 : MonoBehaviour
     public GameObject Step3Done;
     public GameObject Step4Done;
     public GameObject Step5Done;
-    public GameObject Step6Done;    
+    public GameObject Step6Done;  
+
+    public GameObject[] CircuitImage;
+    public TextMeshProUGUI CircuitInstructions;              
 
     [Header("Power Supply")]
     public GameObject PowerSupplySwitch;
@@ -133,6 +136,16 @@ public class Circuit4 : MonoBehaviour
             Button6.SetActive(false);
             Step6Done.SetActive(true);
         }
+
+        if(Circuit4Step1.Step1C4Done &&
+           Circuit4Step2.Step2C4Done &&
+           Circuit4Step3.Step3C4Done &&
+           Circuit4Step4.Step4C4Done &&
+           Circuit4Step5.Step5C4Done &&
+           Circuit4Step6.Step6C4Done       
+        ) {
+            CircuitInstructions.text = "Circuit Completed!";
+        } 
 
         step1();
         step2();
@@ -338,9 +351,8 @@ public class Circuit4 : MonoBehaviour
             DCMotorBelakang.transform.Rotate(180, 0, 0);
             DCMotorShaft.transform.Rotate(180, 0, 0); 
         }
-
-
-       
+        CircuitImage[0].SetActive(false);
+        CircuitImage[1].SetActive(true);          
     }
 
     public void SwitchDPDTOff() {
@@ -360,7 +372,9 @@ public class Circuit4 : MonoBehaviour
             DCMotorDepan.transform.Rotate(180, 0, 0);
             DCMotorBelakang.transform.Rotate(180, 0, 0);
             DCMotorShaft.transform.Rotate(180, 0, 0); 
-        }     
+        }
+        CircuitImage[0].SetActive(true);
+        CircuitImage[1].SetActive(false);              
     }
     
     //this function will be activated in Draggable.cs
